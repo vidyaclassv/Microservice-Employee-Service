@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h2>Welcome to Admin Dashboard</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Assessment</th>
+        <th>Date</th>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.assessment}"></td>
+        <td th:text="${employee.localDate}"></td>
+    </tr>
+</table>
+<div th:if="${message}">
+    <p style="color: red;" th:text="${message}"></p>
+</div>
+</body>
+</html>

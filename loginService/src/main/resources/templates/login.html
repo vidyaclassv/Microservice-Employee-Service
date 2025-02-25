@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form action="/login" method="post">
+    <label for="userName">Username: </label>
+    <input type="text" id="userName" name="userName" required />
+    <br />
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" required />
+    <br />
+    <label for="userRole">User Level: </label>
+    <select id="userRole" name="userRole">
+        <option value="emp">Emp</option>
+        <option value="admin">Admin</option>
+    </select>
+    <br />
+    <button type="submit">Login</button>
+</form>
+<div th:if="${message}">
+    <p style="color: red;" th:text="${message}"></p>
+</div>
+</body>
+</html>
